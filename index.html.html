@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Watch Market Report 2025 — IMARC Group Data</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+  :root {
+    --gold: #B8963E;
+    --gold-light: #F5E9C9;
+    --gold-dark: #8A6E2A;
+    --ink: #1A1A1A;
+    --ink-mid: #3D3D3D;
+    --ink-muted: #717171;
+    --bg: #F9F7F3;
+    --surface: #FFFFFF;
+    --border: #E5E0D5;
+    --accent-blue: #1C4E7A;
+    --accent-green: #1A6B4A;
+    --accent-red: #8B2020;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--ink);
+    color: #fff;
+    padding: 64px 56px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 340px; height: 340px;
+    background: radial-gradient(circle at 70% 30%, rgba(184,150,62,0.25), transparent 70%);
+    pointer-events: none;
+  }
+  .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 640px;
+  }
+  .cover-title span { color: var(--gold); }
+  .cover-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 24px;
+  }
+  .cover-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .cover-meta-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .cover-meta-value { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+  /* LAYOUT */
+  .report-body { max-width: 960px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  /* SECTION HEADERS */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .section-note {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-left: auto;
+    font-style: italic;
+  }
+
+  /* METRIC CARDS */
+  .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+  .metric-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 16px;
+  }
+  .metric-card.gold-accent { border-left: 3px solid var(--gold); }
+  .metric-card.blue-accent { border-left: 3px solid var(--accent-blue); }
+  .metric-card.green-accent { border-left: 3px solid var(--accent-green); }
+  .m-label { font-size: 11px; color: var(--ink-muted); font-weight: 500; margin-bottom: 6px; letter-spacing: 0.02em; }
+  .m-value { font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.1; }
+  .m-sub { font-size: 11px; color: var(--ink-muted); margin-top: 4px; }
+  .m-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-top: 6px; }
+  .badge-up { background: #E6F5EE; color: #1A6B4A; }
+  .badge-down { background: #FDECEA; color: #8B2020; }
+  .badge-neutral { background: #F5E9C9; color: #8A6E2A; }
+
+  /* CHART CONTAINERS */
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  .chart-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .chart-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .chart-box-full {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .chart-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .chart-sub { font-size: 11px; color: var(--ink-muted); margin-bottom: 14px; }
+  .chart-wrap { position: relative; }
+  .chart-legend {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 12px; font-size: 11px; color: var(--ink-muted);
+  }
+  .legend-dot {
+    display: inline-block; width: 10px; height: 10px;
+    border-radius: 2px; margin-right: 4px; vertical-align: middle;
+  }
+
+  /* TABLE */
+  .data-table {
+    width: 100%; border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+  .data-table th {
+    background: #F3EFE8;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    border-bottom: 1px solid var(--border);
+  }
+  .data-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+    vertical-align: middle;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: #FAFAF8; }
+  .td-bold { font-weight: 600; }
+  .td-green { color: var(--accent-green); font-weight: 600; }
+  .td-gold { color: var(--gold-dark); font-weight: 600; }
+  .td-muted { color: var(--ink-muted); }
+  .pill {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    padding: 2px 8px; border-radius: 20px; white-space: nowrap;
+  }
+  .pill-green { background: #E6F5EE; color: #1A6B4A; }
+  .pill-amber { background: #FEF3C7; color: #92400E; }
+  .pill-blue { background: #E0EBF7; color: #1C4E7A; }
+
+  /* STATE CARDS */
+  .state-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+  .state-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .state-card.top { border-top: 3px solid var(--gold); }
+  .state-card.fast { border-top: 3px solid var(--accent-green); }
+  .state-rank { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px; }
+  .state-name { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .state-cities { font-size: 11px; color: var(--gold-dark); font-weight: 500; margin-bottom: 8px; }
+  .state-share { font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+  .state-desc { font-size: 11px; color: var(--ink-muted); line-height: 1.5; }
+
+  /* INFO CARDS */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  .info-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .info-box-title { font-size: 13px; font-weight: 600; margin-bottom: 14px; color: var(--ink); }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .info-list li { display: flex; gap: 10px; font-size: 12.5px; color: var(--ink-mid); line-height: 1.5; }
+  .info-list li::before { content: ''; flex-shrink: 0; }
+  .dot-green { width: 7px; height: 7px; background: var(--accent-green); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .dot-red { width: 7px; height: 7px; background: var(--accent-red); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+
+  /* TIMELINE */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .timeline-item { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { font-size: 11px; font-weight: 600; color: var(--gold-dark); min-width: 64px; margin-top: 2px; }
+  .timeline-text { font-size: 12.5px; color: var(--ink-mid); line-height: 1.5; }
+
+  /* FOOTER */
+  .report-footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+  }
+  .report-footer span { color: var(--gold); }
+
+  /* DISCLAIMER BOX */
+  .disclaimer {
+    background: var(--gold-light);
+    border: 1px solid #D4B96B;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 11.5px;
+    color: #6B4F1A;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* SEGMENT ANALYSIS BOX */
+  .segment-vs {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .vs-label {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--border);
+    text-align: center;
+  }
+  .seg-side { }
+  .seg-head { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .seg-share { font-size: 36px; font-weight: 700; line-height: 1; margin-bottom: 8px; }
+  .seg-share.analog { color: var(--accent-blue); }
+  .seg-share.digital { color: var(--accent-green); }
+  .seg-points { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .seg-points li { font-size: 12px; color: var(--ink-muted); padding-left: 12px; position: relative; }
+  .seg-points li::before { content: '—'; position: absolute; left: 0; color: var(--border); }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <p class="cover-eyebrow">Market Intelligence Report · Primary Source: IMARC Group</p>
+  <h1 class="cover-title">India <span>Watch Market</span><br>Research Report 2025</h1>
+  <p class="cover-sub">A comprehensive analysis of India's ₹53,760 crore watch industry — covering global context, market size, segment breakdown, analog vs. digital dynamics, state-wise geography, key players, and growth outlook through 2033.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Primary Source</span>
+      <span class="cover-meta-value">IMARC Group</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Base Year</span>
+      <span class="cover-meta-value">2024</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Forecast Period</span>
+      <span class="cover-meta-value">2025 – 2033</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Currency</span>
+      <span class="cover-meta-value">INR (₹84 = USD 1)</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Prepared for</span>
+      <span class="cover-meta-value">Zivanche / Timeless Vision Group</span>
+    </div>
+  </div>
+</div>
+
+<div class="report-body">
+
+<div class="disclaimer">
+  <strong>Note on INR figures:</strong> All global and India market size figures are sourced in USD from IMARC Group reports and converted to INR at ₹84 per USD. Titan, Ethos, and Timex India revenues are from audited BSE/NSE filings in original INR. Segment share percentages (analog, digital, price range, region) are directional estimates from research reports — precise % figures for India are not published in the public domain by IMARC.
+</div>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 1: GLOBAL CONTEXT -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">01</span>
+  <span class="section-title">Global Watch Market — Context & CAGR</span>
+  <span class="section-note">Source: IMARC Group Global Watch Market Report 2025</span>
+</div>
+
+<div class="metric-grid">
+  <div class="metric-card gold-accent">
+    <p class="m-label">Global market size 2024</p>
+    <p class="m-value">₹65.52L Cr</p>
+    <p class="m-sub">USD 78.0B · IMARC Group</p>
+  </div>
+  <div class="metric-card gold-accent">
+    <p class="m-label">Global market size 2025</p>
+    <p class="m-value">₹68.29L Cr</p>
+    <p class="m-sub">USD 81.3B · IMARC Group</p>
+  </div>
+  <div class="metric-card gold-accent">
+    <p class="m-label">Global market 2033 (projected)</p>
+    <p class="m-value">₹95.59L Cr</p>
+    <p class="m-sub">USD 113.8B · IMARC Group</p>
+  </div>
+  <div class="metric-card gold-accent">
+    <p class="m-label">Global CAGR 2025–2033</p>
+    <p class="m-value">4.25%</p>
+    <p class="m-sub">Compound annual growth rate</p>
+  </div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-box">
+    <p class="chart-title">Global watch market size — USD Billion (IMARC)</p>
+    <p class="chart-sub">Total market including all watch types worldwide</p>
+    <div class="chart-wrap" style="height:200px">
+      <canvas id="globalSizeChart" role="img" aria-label="Global watch market size bar chart">2024=78B, 2025=81.3B, 2033=113.8B</canvas>
+    </div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#B8963E"></span>Global market (USD B)</span>
+    </div>
+  </div>
+  <div class="chart-box">
+    <p class="chart-title">Global sub-market CAGR comparison</p>
+    <p class="chart-sub">IMARC Group — different watch categories</p>
+    <div class="chart-wrap" style="height:200px">
+      <canvas id="globalCagrChart" role="img" aria-label="Global CAGR comparison across watch segments">Traditional 4.25%, Luxury 2.52%, Smartwatch 17%</canvas>
+    </div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#1C4E7A"></span>CAGR %</span>
+    </div>
+  </div>
+</div>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th>2024 Size (USD)</th>
+      <th>2024 Size (INR)</th>
+      <th>2033/34 Projected (USD)</th>
+      <th>CAGR</th>
+      <th>Asia-Pacific Share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="td-bold">Global Total Watch Market</td>
+      <td>USD 78.0B</td>
+      <td class="td-bold">₹65,52,000 Cr</td>
+      <td>USD 113.8B (2033)</td>
+      <td class="td-green">4.25%</td>
+      <td class="td-gold">33.7%</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Global Luxury Watch Market</td>
+      <td>USD 28.4B (2024)</td>
+      <td class="td-bold">₹2,38,560 Cr</td>
+      <td>USD 37.4B (2034)</td>
+      <td class="td-green">2.52%</td>
+      <td class="td-muted">N/A</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Global Smartwatch Market</td>
+      <td>USD 53.2B</td>
+      <td class="td-bold">₹4,46,880 Cr</td>
+      <td>USD 218.9B (2033)</td>
+      <td class="td-green">17.0%</td>
+      <td class="td-muted">Dominant</td>
+    </tr>
+    <tr>
+      <td class="td-bold">India Watch Market</td>
+      <td>USD 6.4B</td>
+      <td class="td-bold">₹53,760 Cr</td>
+      <td>USD 10.2B (2033)</td>
+      <td class="td-green">5.1%</td>
+      <td class="td-gold">~8% of global</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 2: INDIA MARKET SIZE -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">02</span>
+  <span class="section-title">India Watch Market — Size & Growth Outlook</span>
+  <span class="section-note">Source: IMARC Group India Watch Market Report 2025</span>
+</div>
+
+<div class="metric-grid">
+  <div class="metric-card blue-accent">
+    <p class="m-label">India market 2020</p>
+    <p class="m-value">₹44,016 Cr</p>
+    <p class="m-sub">USD 5.24B · historical baseline</p>
+  </div>
+  <div class="metric-card blue-accent">
+    <p class="m-label">India market 2024</p>
+    <p class="m-value">₹53,760 Cr</p>
+    <p class="m-sub">USD 6.4B · IMARC Group</p>
+    <span class="m-badge badge-up">+22% vs 2020</span>
+  </div>
+  <div class="metric-card blue-accent">
+    <p class="m-label">India market 2025</p>
+    <p class="m-value">₹56,364 Cr</p>
+    <p class="m-sub">USD 6.71B · IMARC Group</p>
+    <span class="m-badge badge-up">+4.8% YoY</span>
+  </div>
+  <div class="metric-card blue-accent">
+    <p class="m-label">India market 2033 (projected)</p>
+    <p class="m-value">₹85,680 Cr</p>
+    <p class="m-sub">USD 10.2B · CAGR 5.1%</p>
+  </div>
+</div>
+
+<div class="chart-box-full">
+  <p class="chart-title">India watch market trajectory — ₹ Crore (IMARC Group)</p>
+  <p class="chart-sub">Historical 2020 to 2025 actuals · 2030 midpoint · 2033 projected</p>
+  <div class="chart-wrap" style="height:220px">
+    <canvas id="indiaTrajectory" role="img" aria-label="India watch market trajectory bar chart">2020=44016, 2024=53760, 2025=56364, 2030=72072, 2033=85680</canvas>
+  </div>
+  <div class="chart-legend">
+    <span><span class="legend-dot" style="background:#1C4E7A"></span>Actual market size</span>
+    <span><span class="legend-dot" style="background:#B5D4F4"></span>Projected / forecast</span>
+  </div>
+</div>
+
+<div class="metric-grid metric-grid-3">
+  <div class="metric-card green-accent">
+    <p class="m-label">India CAGR 2025–2033</p>
+    <p class="m-value">5.1%</p>
+    <p class="m-sub">IMARC Group India report</p>
+    <span class="m-badge badge-up">Above global avg 4.25%</span>
+  </div>
+  <div class="metric-card green-accent">
+    <p class="m-label">Annual units sold in India</p>
+    <p class="m-value">~5 Crore</p>
+    <p class="m-sub">~50 million watches per year · IMARC</p>
+  </div>
+  <div class="metric-card green-accent">
+    <p class="m-label">India's share of global market</p>
+    <p class="m-value">~8%</p>
+    <p class="m-sub">Of USD 78B global market (2024)</p>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 3: ANALOG vs DIGITAL SEGMENT -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">03</span>
+  <span class="section-title">Analog vs. Digital — Segment Deep Dive</span>
+  <span class="section-note">Sources: IMARC Group, PS Market Research, Mordor Intelligence 2025</span>
+</div>
+
+<div class="segment-vs">
+  <div class="seg-side">
+    <p class="seg-head">Analog / Quartz Watches</p>
+    <p class="seg-share analog">60–72%</p>
+    <p style="font-size:11px;color:#717171;margin-bottom:12px;">Share of total India watch market revenue (2025)</p>
+    <ul class="seg-points">
+      <li>Largest segment by both volume and revenue</li>
+      <li>Quartz alone leads at 72% (IMARC, 2025)</li>
+      <li>Deep cultural preference for traditional timepieces</li>
+      <li>Titan analog revenue grew 17–26% YoY in FY25</li>
+      <li>Favoured by professionals, gifting, formal wear</li>
+      <li>Mechanical sub-segment growing at 6.1% CAGR</li>
+      <li>Mass market price point: below ₹5,000</li>
+    </ul>
+  </div>
+  <div class="vs-label">VS</div>
+  <div class="seg-side">
+    <p class="seg-head">Digital / Smartwatches</p>
+    <p class="seg-share digital">28–40%</p>
+    <p style="font-size:11px;color:#717171;margin-bottom:12px;">Share of total India watch market revenue (2025)</p>
+    <ul class="seg-points">
+      <li>Fastest growing by revenue CAGR but declining in units</li>
+      <li>India smartwatch shipments fell 34.4% in 2024 (IDC)</li>
+      <li>Revenue declining as average selling prices drop</li>
+      <li>Sub-₹2,000 smartwatches dominate budget segment</li>
+      <li>Apple Watch grew 141% in 2024 amid overall decline</li>
+      <li>Titan wearables revenue fell 6–13% in FY25 quarters</li>
+      <li>Premiumisation reshaping digital — Apple, Samsung lead</li>
+    </ul>
+  </div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-box">
+    <p class="chart-title">Watch type breakdown by revenue share (2025)</p>
+    <p class="chart-sub">IMARC Group — quartz leads; mechanical gaining share in premium</p>
+    <div class="chart-wrap" style="height:190px">
+      <canvas id="typeDonut" role="img" aria-label="Donut chart: Quartz 72%, Mechanical 28%">Quartz 72%, Mechanical 28%</canvas>
+    </div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#1C4E7A"></span>Quartz / analog — 72%</span>
+      <span><span class="legend-dot" style="background:#8FB8D8"></span>Mechanical — 28%</span>
+    </div>
+  </div>
+  <div class="chart-box">
+    <p class="chart-title">Analog vs. smartwatch revenue trend — Titan India</p>
+    <p class="chart-sub">Audited Titan Company quarterly results — growth rates YoY</p>
+    <div class="chart-wrap" style="height:190px">
+      <canvas id="titanTrend" role="img" aria-label="Bar chart: Titan analog growth vs wearables growth by quarter FY25">Analog: Q1+17%, Q2+26%, Q4+18%. Wearables: Q1 -6%, Q2 -13%</canvas>
+    </div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#1C4E7A"></span>Analog growth %</span>
+      <span><span class="legend-dot" style="background:#E5E0D5"></span>Wearables growth %</span>
+    </div>
+  </div>
+</div>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Analog / Quartz</th>
+      <th>Mechanical</th>
+      <th>Digital / Smartwatch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="td-bold">Revenue share (2025)</td>
+      <td class="td-green">~60–72%</td>
+      <td class="td-gold">~28% (of analog)</td>
+      <td class="td-muted">28–40%</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Volume trend</td>
+      <td>Stable / growing</td>
+      <td>Growing (collector appeal)</td>
+      <td class="td-muted">Declining (−34% units 2024)</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Revenue CAGR</td>
+      <td class="td-green">~5–6%</td>
+      <td class="td-green">~6.1%</td>
+      <td>~8% (but ASP falling)</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Primary consumer</td>
+      <td>Professionals, gifting, formal</td>
+      <td>Collectors, HNIs, luxury buyers</td>
+      <td>Youth, fitness-conscious, tech users</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Key price points</td>
+      <td>₹500 – ₹50,000+</td>
+      <td>₹10,000 – ₹10L+</td>
+      <td>Sub ₹2,000 – ₹33,000+</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Titan FY25 growth</td>
+      <td class="td-green">+17% (full year) / +26% Q2</td>
+      <td class="td-gold">Included in analog segment</td>
+      <td class="td-muted">−6% to −13% (revenue)</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Outlook 2033</td>
+      <td>Dominant, premiumising</td>
+      <td>Growing — collector renaissance</td>
+      <td>Premiumising — budget consolidating</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 4: PRICE RANGE SEGMENTATION -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">04</span>
+  <span class="section-title">Price Range Segmentation</span>
+  <span class="section-note">Source: IMARC Group India Watch Market Report</span>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-box">
+    <p class="chart-title">Price segment share — India watch market 2025</p>
+    <p class="chart-sub">Low-range leads by volume; luxury fastest by value</p>
+    <div class="chart-wrap" style="height:200px">
+      <canvas id="priceDonut" role="img" aria-label="Donut: Low-range 48%, Mid-range 34%, Luxury 18%">Low-range 48%, Mid-range 34%, Luxury 18%</canvas>
+    </div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#1C4E7A"></span>Low-range — 48%</span>
+      <span><span class="legend-dot" style="background:#378ADD"></span>Mid-range — 34%</span>
+      <span><span class="legend-dot" style="background:#B8963E"></span>Luxury — 18%</span>
+    </div>
+  </div>
+  <div class="chart-box">
+    <p class="chart-title">Luxury sub-market — India (₹ Crore)</p>
+    <p class="chart-sub">Source: IMARC Group India Luxury Watch Report</p>
+    <div class="chart-wrap" style="height:200px">
+      <canvas id="luxuryBar" role="img" aria-label="Luxury watch market bar chart: 2024=13440, 2025=14280, 2033=23520 crore">2024=13440, 2025=14280, 2033=23520</canvas>
+    </div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#B8963E"></span>Luxury market (₹ Cr)</span>
+    </div>
+  </div>
+</div>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Price Segment</th>
+      <th>Approx. Share</th>
+      <th>India INR Size (2024)</th>
+      <th>CAGR</th>
+      <th>Key Brands</th>
+      <th>Key Driver</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="td-bold">Low-range / Mass market</td>
+      <td>~48%</td>
+      <td>~₹25,805 Cr</td>
+      <td class="td-muted">~4%</td>
+      <td>Sonata, HMT, Casio (entry), local</td>
+      <td>Volume, affordability, Tier 2/3 cities</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Mid-range / Premium</td>
+      <td>~34%</td>
+      <td>~₹18,278 Cr</td>
+      <td class="td-green">~5–6%</td>
+      <td>Titan, Fastrack, Timex, Casio, Fossil</td>
+      <td>Premiumisation, gifting, urban middle class</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Luxury</td>
+      <td>~18%</td>
+      <td>₹13,440 Cr (USD 1.6B)</td>
+      <td class="td-green">5.66%</td>
+      <td>Rolex, Omega, TAG, Rado, IWC, Ethos</td>
+      <td>HNI growth, aspirational spending, Swiss imports</td>
+    </tr>
+    <tr>
+      <td class="td-bold">Luxury (2033 projection)</td>
+      <td>~20% (est.)</td>
+      <td class="td-green">₹23,520 Cr (USD 2.8B)</td>
+      <td class="td-green">5.66%</td>
+      <td colspan="2">Affluent population expected to double to 8.8 crore by 2028 (UBS / IBEF)</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 5: DISTRIBUTION CHANNEL -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">05</span>
+  <span class="section-title">Distribution Channel Analysis</span>
+  <span class="section-note">Source: IMARC Group · Mordor Intelligence</span>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-box">
+    <p class="chart-title">Offline vs. online channel split (2025)</p>
+    <p class="chart-sub">Offline dominates traditional watches; online growing fast</p>
+    <div class="chart-wrap" style="height:200px">
+      <canvas id="distDonut" role="img" aria-label="Donut: Offline 65%, Online 35%">Offline 65%, Online 35%</canvas>
+    </div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#1C4E7A"></span>Offline retail — 65%</span>
+      <span><span class="legend-dot" style="background:#1A6B4A"></span>Online retail — 35%</span>
+    </div>
+  </div>
+  <div class="chart-box">
+    <p class="chart-title">Key distribution channel insights</p>
+    <p class="chart-sub">India watch market channel dynamics 2024–25</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+      <div style="background:#F3EFE8;border-radius:8px;padding:12px 14px;">
+        <p style="font-size:12px;font-weight:600;color:#1C4E7A;margin-bottom:4px;">63.4%</p>
+        <p style="font-size:11px;color:#717171;">of wearable shipments via e-commerce platforms (IMARC, 2025)</p>
+      </div>
+      <div style="background:#F3EFE8;border-radius:8px;padding:12px 14px;">
+        <p style="font-size:12px;font-weight:600;color:#1A6B4A;margin-bottom:4px;">7,000+</p>
+        <p style="font-size:11px;color:#717171;">Titan multi-brand outlets across India alongside 1,900+ exclusive stores</p>
+      </div>
+      <div style="background:#F3EFE8;border-radius:8px;padding:12px 14px;">
+        <p style="font-size:12px;font-weight:600;color:#B8963E;margin-bottom:4px;">73 boutiques</p>
+        <p style="font-size:11px;color:#717171;">Ethos luxury watch stores across 26 cities · 65+ global brands</p>
+      </div>
+      <div style="background:#F3EFE8;border-radius:8px;padding:12px 14px;">
+        <p style="font-size:12px;font-weight:600;color:#3D3D3D;margin-bottom:4px;">Tier 2 & 3 expansion</p>
+        <p style="font-size:11px;color:#717171;">Smaller cities contribute 60% of national GDP; flagships expanding into new markets</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 6: END USER SEGMENTATION -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">06</span>
+  <span class="section-title">End User Segmentation — Men, Women, Unisex</span>
+  <span class="section-note">Source: IMARC Group · Mordor Intelligence 2025</span>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-box">
+    <p class="chart-title">End user split — India watch market 2025</p>
+    <p class="chart-sub">Men dominate; women fastest growing at 9.16% CAGR</p>
+    <div class="chart-wrap" style="height:200px">
+      <canvas id="userDonut" role="img" aria-label="Donut: Men 58%, Women 24%, Unisex 18%">Men 58%, Women 24%, Unisex 18%</canvas>
+    </div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#1C4E7A"></span>Men — 58%</span>
+      <span><span class="legend-dot" style="background:#C25F8A"></span>Women — 24%</span>
+      <span><span class="legend-dot" style="background:#B4B2A9"></span>Unisex — 18%</span>
+    </div>
+  </div>
+  <div class="chart-box">
+    <p class="chart-title">Women's segment — why it's the fastest growing</p>
+    <p class="chart-sub">India's female workforce and purchasing power driving watch demand</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+      <div style="background:#FDF0F5;border-radius:8px;padding:12px 14px;">
+        <p style="font-size:12px;font-weight:600;color:#C25F8A;margin-bottom:4px;">9.16% CAGR</p>
+        <p style="font-size:11px;color:#717171;">Women's segment CAGR — fastest of all end-user groups (Mordor Intelligence)</p>
+      </div>
+      <div style="background:#FDF0F5;border-radius:8px;padding:12px 14px;">
+        <p style="font-size:12px;font-weight:600;color:#C25F8A;margin-bottom:4px;">41%</p>
+        <p style="font-size:11px;color:#717171;">of Indian women are now part of the workforce (2024), driving demand</p>
+      </div>
+      <div style="background:#FDF0F5;border-radius:8px;padding:12px 14px;">
+        <p style="font-size:12px;font-weight:600;color:#C25F8A;margin-bottom:4px;">152.2 crore</p>
+        <p style="font-size:11px;color:#717171;">India's projected population by 2036, 48.8% female (MoSPI) — expanding target base</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 7: REGIONAL BREAKDOWN — STATES -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">07</span>
+  <span class="section-title">India Geography — State-wise Market Breakdown</span>
+  <span class="section-note">Sources: PS Market Research · Mordor Intelligence · IMARC Group 2025</span>
+</div>
+
+<div class="chart-box-full">
+  <p class="chart-title">Watch market share by state — top 6 contributors</p>
+  <p class="chart-sub">Maharashtra leads; Karnataka fastest growing. Delhi-NCR, Tamil Nadu, Gujarat, and Telangana complete the top tier.</p>
+  <div class="chart-wrap" style="height:220px">
+    <canvas id="stateChart" role="img" aria-label="Horizontal bar chart of state-wise watch market share">Maharashtra 25%, Delhi-NCR 18%, Karnataka 15%, Tamil Nadu 12%, Gujarat 10%, Telangana 8%</canvas>
+  </div>
+</div>
+
+<div class="state-grid">
+  <div class="state-card top">
+    <p class="state-rank">🥇 Largest market · 2025</p>
+    <p class="state-name">Maharashtra</p>
+    <p class="state-cities">Mumbai · Pune · Nagpur</p>
+    <p class="state-share">25%</p>
+    <p class="state-desc">India's financial capital. Highest concentration of HNIs and luxury mono-brand boutiques. Attracted 31% of India's total FDI in FY25 (DPIIT). Mumbai's ultra-premium retail scene drives both watches sold and ASP. Pune and Nagpur add upper-middle-class volume.</p>
+  </div>
+  <div class="state-card">
+    <p class="state-rank">Strong performer</p>
+    <p class="state-name">Delhi-NCR</p>
+    <p class="state-cities">Delhi · Gurugram · Noida</p>
+    <p class="state-share">~18%</p>
+    <p class="state-desc">India's highest per capita income region. Dense salaried professional and government workforce drives corporate gifting demand, especially around Republic Day, Independence Day, and Diwali cycles. Strong branded watch retail and luxury boutique presence.</p>
+  </div>
+  <div class="state-card fast">
+    <p class="state-rank">🚀 Fastest growing · 7.5% CAGR</p>
+    <p class="state-name">Karnataka</p>
+    <p class="state-cities">Bengaluru · Mysuru · Mangaluru</p>
+    <p class="state-share">~15%</p>
+    <p class="state-desc">Bengaluru's IT and startup workforce drives premium watch aspiration. Per capita NSDP rose 47% between 2018–2022 (MoSPI). Karnataka attracted 20% of FDI after Maharashtra. South India's tech capital shows accelerating demand for both analog premium and connected wearables.</p>
+  </div>
+  <div class="state-card">
+    <p class="state-rank">Key contributor</p>
+    <p class="state-name">Tamil Nadu</p>
+    <p class="state-cities">Chennai · Coimbatore · Madurai</p>
+    <p class="state-share">~12%</p>
+    <p class="state-desc">Strong middle-class consumer base with rising aspirational spending. Second-largest state economy. Manufacturing strength creates a salaried workforce with stable watch demand. Chennai is a significant multi-brand and branded retail hub. Watch-as-gift culture deeply embedded.</p>
+  </div>
+  <div class="state-card">
+    <p class="state-rank">Industrialised market</p>
+    <p class="state-name">Gujarat</p>
+    <p class="state-cities">Ahmedabad · Surat · Vadodara</p>
+    <p class="state-share">~10%</p>
+    <p class="state-desc">Business-driven economy with strong entrepreneur and trader class. Third-largest state economy. Gifting culture is strong among business communities. Surat's diamond and textile wealth drives premium and luxury watch demand. Expanding organised retail fuelling growth.</p>
+  </div>
+  <div class="state-card">
+    <p class="state-rank">Emerging powerhouse</p>
+    <p class="state-name">Telangana</p>
+    <p class="state-cities">Hyderabad · Warangal</p>
+    <p class="state-share">~8%</p>
+    <p class="state-desc">Hyderabad is a rising luxury consumption city — growing pharma, IT, and BFSI sectors generating HNI wealth. Ethos and international brands expanding boutique presence here. Fastest growing second-tier luxury retail city after Mumbai and Delhi.</p>
+  </div>
+</div>
+
+<div class="chart-box-full">
+  <p class="chart-title">Regional zone breakdown — India (IMARC Group segmentation)</p>
+  <p class="chart-sub">IMARC segments India into 4 zones — North India leads with 30% share per IMARC data</p>
+  <div class="chart-wrap" style="height:200px">
+    <canvas id="regionChart" role="img" aria-label="Bar chart: North India 30%, South India 29%, West Central 26%, East 15%">North 30%, South 29%, West/Central 26%, East 15%</canvas>
+  </div>
+  <div class="chart-legend">
+    <span><span class="legend-dot" style="background:#1C4E7A"></span>North India — 30%</span>
+    <span><span class="legend-dot" style="background:#1A6B4A"></span>South India — 29%</span>
+    <span><span class="legend-dot" style="background:#B8963E"></span>West & Central — 26%</span>
+    <span><span class="legend-dot" style="background:#888780"></span>East India — 15%</span>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 8: KEY PLAYERS -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">08</span>
+  <span class="section-title">Key Players — India Watch Market</span>
+  <span class="section-note">Revenues from audited BSE/NSE filings where available</span>
+</div>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Segment</th>
+      <th>India Revenue FY25</th>
+      <th>Growth</th>
+      <th>Stores / Presence</th>
+      <th>Data Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="td-bold">Titan Company</td>
+      <td>Mass to premium analog</td>
+      <td class="td-bold">₹4,576 Cr</td>
+      <td class="td-green">+17% YoY</td>
+      <td>3,096 stores · 700+ towns</td>
+      <td><span class="pill pill-green">Audited FY25</span></td>
+    </tr>
+    <tr>
+      <td class="td-bold">Ethos Limited</td>
+      <td>Premium & luxury</td>
+      <td class="td-bold">₹1,252 Cr</td>
+      <td class="td-green">+25% YoY</td>
+      <td>73 boutiques · 26 cities · ASP ₹2.07L</td>
+      <td><span class="pill pill-green">Audited FY25</span></td>
+    </tr>
+    <tr>
+      <td class="td-bold">Timex Group India</td>
+      <td>Mid-range</td>
+      <td class="td-bold">₹538 Cr</td>
+      <td class="td-green">+28% YoY</td>
+      <td>Pan-India multi-channel distribution</td>
+      <td><span class="pill pill-green">Audited FY25</span></td>
+    </tr>
+    <tr>
+      <td class="td-bold">Casio India</td>
+      <td>Budget to mid</td>
+      <td class="td-muted">Not disclosed</td>
+      <td class="td-muted">N/A</td>
+      <td>Private entity · G-Shock, Edifice, Casio</td>
+      <td><span class="pill pill-amber">Private Ltd</span></td>
+    </tr>
+    <tr>
+      <td class="td-bold">Rolex / Omega / TAG Heuer</td>
+      <td>Ultra luxury</td>
+      <td class="td-muted">Not disclosed</td>
+      <td class="td-gold">Swiss exports +12.7% H1 2025</td>
+      <td>Mono-brand boutiques · Mumbai, Delhi, Bengaluru</td>
+      <td><span class="pill pill-amber">Private / Foreign</span></td>
+    </tr>
+    <tr>
+      <td class="td-bold">Fossil / Citizen / Seiko</td>
+      <td>Mid to premium</td>
+      <td class="td-muted">Not disclosed</td>
+      <td class="td-muted">N/A</td>
+      <td>Multi-brand and EBO distribution</td>
+      <td><span class="pill pill-amber">Private / Foreign</span></td>
+    </tr>
+    <tr>
+      <td class="td-bold" colspan="2">Combined verified organised market (3 listed cos.)</td>
+      <td class="td-bold td-green">₹6,366 Cr</td>
+      <td class="td-green">+20% avg</td>
+      <td colspan="2">Auditable floor of India's organised watch industry</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 9: GROWTH DRIVERS & CHALLENGES -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">09</span>
+  <span class="section-title">Growth Drivers & Challenges</span>
+  <span class="section-note">Source: IMARC Group · MoSPI · IBEF · IDC India 2025</span>
+</div>
+
+<div class="info-grid">
+  <div class="info-box">
+    <p class="info-box-title" style="color:var(--accent-green)">Key Growth Drivers</p>
+    <ul class="info-list">
+      <li><span class="dot-green"></span>Rising household income — avg ₹3.19 lakh/yr (McKinsey 2025); per capita NNI ₹1,92,774 (MoSPI FY25)</li>
+      <li><span class="dot-green"></span>Affluent population doubling to 8.8 crore by 2028 (UBS / IBEF) — direct luxury demand catalyst</li>
+      <li><span class="dot-green"></span>E-commerce — 63.4% of wearable shipments via online platforms; growing Tier 2/3 reach</li>
+      <li><span class="dot-green"></span>Premiumisation in analog — Titan analog +26% YoY Q2 FY25; Ethos ASP up 7% to ₹2.07 lakh</li>
+      <li><span class="dot-green"></span>Deep gifting culture — watches remain among top gifting categories (corporate and personal)</li>
+      <li><span class="dot-green"></span>Growing women workforce (41%) driving fastest-growing end-user segment at 9.16% CAGR</li>
+      <li><span class="dot-green"></span>Fashion brand collaborations — Titan-Ducati, Helios-U-BOAT, international brand entry</li>
+      <li><span class="dot-green"></span>Swiss watch exports to India rose 12.7% in H1 2025 — luxury appetite confirmed</li>
+      <li><span class="dot-green"></span>Pre-owned / certified luxury market emerging — Tata CLiQ ReLoved, Jay's Watch Store</li>
+    </ul>
+  </div>
+  <div class="info-box">
+    <p class="info-box-title" style="color:var(--accent-red)">Key Challenges</p>
+    <ul class="info-list">
+      <li><span class="dot-red"></span>Unorganised market undercuts organised players by 60–80% in Tier 3+ cities and rural markets</li>
+      <li><span class="dot-red"></span>Counterfeit goods — grey market valued at ₹1.4 lakh crore nationally, significant watch component</li>
+      <li><span class="dot-red"></span>30% import duty on luxury watches raises India prices above global market levels</li>
+      <li><span class="dot-red"></span>Smartphone cannibalising casual watch demand among Gen Z consumers</li>
+      <li><span class="dot-red"></span>Smartwatch shipments fell 34.4% in 2024 (IDC) — signalling wearable market consolidation</li>
+      <li><span class="dot-red"></span>Heavy import dependence on Swiss movements and components creates cost pressure</li>
+      <li><span class="dot-red"></span>Limited differentiation in budget segment suppressing volume growth at mass-market end</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 10: RECENT DEVELOPMENTS -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">10</span>
+  <span class="section-title">Recent Developments — 2024–2025</span>
+</div>
+
+<div class="chart-box-full">
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="timeline-date">Sep 2025</span>
+      <span class="timeline-text">Samsung launched Galaxy Watch 8 and Watch 8 Classic in India with enhanced health and wellness features — pricing starting at ₹32,999. Marks continued premiumisation in the digital segment.</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">Aug 2025</span>
+      <span class="timeline-text">Casio India unveiled its first locally produced automatic watch collection — Edifice EFK-100 series — priced from ₹25,995. Signals Casio's move into the mechanical segment in India.</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">Dec 2025</span>
+      <span class="timeline-text">Titan Company partnered with Ducati India — 43 watch models priced between ₹14,799 and ₹27,999. Brand collaboration strategy accelerating Titan's premium positioning.</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">Sep 2024</span>
+      <span class="timeline-text">Titan Helios partnered with Italian premium watchmaker U-BOAT to unveil watches in India. Helios network: 240 stores across 95 cities and growing.</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">Apr 2025</span>
+      <span class="timeline-text">Xiaomi launched Redmi Watch Move — India's first locally manufactured smartwatch at ₹1,999. Reflects PLI-driven domestic manufacturing momentum in the budget wearable segment.</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">Jan 2024</span>
+      <span class="timeline-text">Tata CLiQ Luxury launched the ReLoved pre-owned certified watch store in partnership with Jay's Watch Store — offering Rolex, Omega, and other premium brands. Pre-owned segment formalising.</span>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">H1 2025</span>
+      <span class="timeline-text">Swiss watch exports to India reached CHF 128.3 million — up 12.7% YoY and +30.2% vs H1 2023 (Federation of the Swiss Watch Industry). Rolex, Omega, Breitling expanding mono-brand boutiques.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- SECTION 11: QUICK REFERENCE SUMMARY -->
+<!-- ─────────────────────────────────────────── -->
+<div class="section-header">
+  <span class="section-num">11</span>
+  <span class="section-title">Quick Reference — All Key Numbers</span>
+</div>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>INR Figure</th>
+      <th>USD Equivalent</th>
+      <th>Source</th>
+      <th>Confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Global watch market 2024</td><td class="td-bold">₹65,52,000 Cr</td><td>USD 78.0B</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr><td>Global watch market 2025</td><td class="td-bold">₹68,29,200 Cr</td><td>USD 81.3B</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr><td>Global watch market 2033 projected</td><td class="td-bold">₹95,59,200 Cr</td><td>USD 113.8B</td><td>IMARC Group</td><td><span class="pill pill-blue">Forecast</span></td></tr>
+    <tr><td>Global CAGR 2025–2033</td><td class="td-bold">4.25%</td><td>—</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr style="background:#F9F7F3"><td>India watch market 2024</td><td class="td-bold">₹53,760 Cr</td><td>USD 6.4B</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr style="background:#F9F7F3"><td>India watch market 2025</td><td class="td-bold">₹56,364 Cr</td><td>USD 6.71B</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr style="background:#F9F7F3"><td>India watch market 2033 projected</td><td class="td-bold">₹85,680 Cr</td><td>USD 10.2B</td><td>IMARC Group</td><td><span class="pill pill-blue">Forecast</span></td></tr>
+    <tr style="background:#F9F7F3"><td>India CAGR 2025–2033</td><td class="td-bold">5.1%</td><td>—</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr><td>India luxury watch market 2024</td><td class="td-bold">₹13,440 Cr</td><td>USD 1.6B</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr><td>India luxury watch market 2025</td><td class="td-bold">₹14,280 Cr</td><td>USD 1.7B</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr><td>India luxury watch market 2033</td><td class="td-bold">₹23,520 Cr</td><td>USD 2.8B</td><td>IMARC Group</td><td><span class="pill pill-blue">Forecast</span></td></tr>
+    <tr><td>Analog / quartz market share 2025</td><td class="td-bold">60–72%</td><td>—</td><td>IMARC / PS Mkt Research</td><td><span class="pill pill-amber">Directional</span></td></tr>
+    <tr><td>Low-range price segment share</td><td class="td-bold">~48%</td><td>—</td><td>IMARC Group</td><td><span class="pill pill-amber">Directional</span></td></tr>
+    <tr><td>Annual watches sold in India</td><td class="td-bold">~5 crore units</td><td>~50M units</td><td>IMARC Group</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr style="background:#F9F7F3"><td>Titan W&W revenue FY25</td><td class="td-bold">₹4,576 Cr</td><td>USD ~545M</td><td>Titan Annual Results</td><td><span class="pill pill-green">Audited</span></td></tr>
+    <tr style="background:#F9F7F3"><td>Ethos Ltd revenue FY25</td><td class="td-bold">₹1,252 Cr</td><td>USD ~149M</td><td>Ethos Annual Results</td><td><span class="pill pill-green">Audited</span></td></tr>
+    <tr style="background:#F9F7F3"><td>Timex India revenue FY25</td><td class="td-bold">₹538 Cr</td><td>USD ~64M</td><td>Timex Annual Results</td><td><span class="pill pill-green">Audited</span></td></tr>
+    <tr style="background:#F9F7F3"><td>Combined 3-co. verified revenue FY25</td><td class="td-bold">₹6,366 Cr</td><td>USD ~758M</td><td>Audited filings</td><td><span class="pill pill-green">Audited</span></td></tr>
+    <tr><td>Per capita NNI India FY2024–25</td><td class="td-bold">₹1,92,774/year</td><td>~USD 2,295</td><td>MoSPI, Govt. of India</td><td><span class="pill pill-green">Official</span></td></tr>
+    <tr><td>Women's segment CAGR</td><td class="td-bold">9.16%</td><td>—</td><td>Mordor Intelligence</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr><td>Maharashtra state share (largest)</td><td class="td-bold">~25%</td><td>~₹13,440 Cr</td><td>PS Market Research 2025</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+    <tr><td>Karnataka CAGR (fastest state)</td><td class="td-bold">~7.5%</td><td>—</td><td>PS Market Research 2025</td><td><span class="pill pill-blue">Research Est.</span></td></tr>
+  </tbody>
+</table>
+
+</div><!-- end report-body -->
+
+<div class="report-footer">
+  Data compiled from <span>IMARC Group</span> · PS Market Research · Mordor Intelligence · IDC India · MoSPI · Titan Company · Ethos Ltd · Timex India · BSE/NSE filings · IBEF · Swiss Watch Industry Federation &nbsp;|&nbsp; Prepared for <span>Zivanche / Timeless Vision Group</span> &nbsp;|&nbsp; INR conversion rate: ₹84 = USD 1 &nbsp;|&nbsp; For internal research use only
+</div>
+
+<script>
+// Color palette
+const BLUE = '#1C4E7A', BLUE_L = '#8FB8D8', BLUE_LL = '#C8DCF0';
+const GREEN = '#1A6B4A', GOLD = '#B8963E', GRAY = '#888780';
+const PINK = '#C25F8A';
+
+const gridColor = 'rgba(0,0,0,0.06)';
+const font = { family: 'Inter, sans-serif', size: 11 };
+
+// 1. Global market size
+new Chart(document.getElementById('globalSizeChart'), {
+  type: 'bar',
+  data: {
+    labels: ['2024', '2025', '2033E'],
+    datasets: [{ data: [78, 81.3, 113.8], backgroundColor: [GOLD, GOLD, '#8A6E2A'], borderRadius: 5 }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: false, min: 60, ticks: { callback: v => '$' + v + 'B', font }, grid: { color: gridColor } }, x: { ticks: { font }, grid: { display: false } } }
+  }
+});
+
+// 2. Global CAGR comparison
+new Chart(document.getElementById('globalCagrChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Traditional Watch', 'Luxury Watch', 'Smartwatch'],
+    datasets: [{ data: [4.25, 2.52, 17], backgroundColor: [BLUE, GOLD, GREEN], borderRadius: 5 }]
+  },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { x: { ticks: { callback: v => v + '%', font }, grid: { color: gridColor } }, y: { ticks: { font: { family: 'Inter', size: 11 } }, grid: { display: false } } }
+  }
+});
+
+// 3. India trajectory
+new Chart(document.getElementById('indiaTrajectory'), {
+  type: 'bar',
+  data: {
+    labels: ['2020', '2024', '2025', '2030E', '2033E'],
+    datasets: [{ data: [44016, 53760, 56364, 72072, 85680],
+      backgroundColor: [BLUE_L, BLUE, BLUE, '#378ADD', '#0C3D61'], borderRadius: 5 }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: {
+      y: { beginAtZero: false, min: 35000, ticks: { callback: v => '₹' + Math.round(v / 1000) + 'K Cr', font }, grid: { color: gridColor } },
+      x: { ticks: { font }, grid: { display: false } }
+    }
+  }
+});
+
+// 4. Type donut
+new Chart(document.getElementById('typeDonut'), {
+  type: 'doughnut',
+  data: { labels: ['Quartz / Analog', 'Mechanical'], datasets: [{ data: [72, 28], backgroundColor: [BLUE, BLUE_LL], borderWidth: 0 }] },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '62%', plugins: { legend: { display: false } } }
+});
+
+// 5. Titan trend
+new Chart(document.getElementById('titanTrend'), {
+  type: 'bar',
+  data: {
+    labels: ['Q1 FY25', 'Q2 FY25', 'Q4 FY25'],
+    datasets: [
+      { label: 'Analog growth %', data: [17, 26, 18], backgroundColor: BLUE, borderRadius: 4 },
+      { label: 'Wearables growth %', data: [-6, -13, null], backgroundColor: '#D3D1C7', borderRadius: 4 }
+    ]
+  },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { y: { ticks: { callback: v => v + '%', font }, grid: { color: gridColor } }, x: { ticks: { font }, grid: { display: false } } }
+  }
+});
+
+// 6. Price donut
+new Chart(document.getElementById('priceDonut'), {
+  type: 'doughnut',
+  data: { labels: ['Low-range', 'Mid-range', 'Luxury'], datasets: [{ data: [48, 34, 18], backgroundColor: [BLUE, '#378ADD', GOLD], borderWidth: 0 }] },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '62%', plugins: { legend: { display: false } } }
+});
+
+// 7. Luxury bar
+new Chart(document.getElementById('luxuryBar'), {
+  type: 'bar',
+  data: {
+    labels: ['2024', '2025', '2033E'],
+    datasets: [{ data: [13440, 14280, 23520], backgroundColor: [GOLD, GOLD, '#8A6E2A'], borderRadius: 5 }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: false, min: 10000, ticks: { callback: v => '₹' + Math.round(v / 1000) + 'K Cr', font }, grid: { color: gridColor } }, x: { ticks: { font }, grid: { display: false } } }
+  }
+});
+
+// 8. Distribution donut
+new Chart(document.getElementById('distDonut'), {
+  type: 'doughnut',
+  data: { labels: ['Offline retail', 'Online retail'], datasets: [{ data: [65, 35], backgroundColor: [BLUE, GREEN], borderWidth: 0 }] },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '62%', plugins: { legend: { display: false } } }
+});
+
+// 9. End user donut
+new Chart(document.getElementById('userDonut'), {
+  type: 'doughnut',
+  data: { labels: ['Men', 'Women', 'Unisex'], datasets: [{ data: [58, 24, 18], backgroundColor: [BLUE, PINK, GRAY], borderWidth: 0 }] },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '62%', plugins: { legend: { display: false } } }
+});
+
+// 10. State chart
+new Chart(document.getElementById('stateChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Maharashtra', 'Delhi-NCR', 'Karnataka', 'Tamil Nadu', 'Gujarat', 'Telangana'],
+    datasets: [{
+      data: [25, 18, 15, 12, 10, 8],
+      backgroundColor: [GOLD, BLUE, GREEN, '#378ADD', '#B8963E88', '#1A6B4A88'],
+      borderRadius: 5
+    }]
+  },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    layout: { padding: { left: 10 } },
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { callback: v => v + '%', font }, grid: { color: gridColor } },
+      y: { ticks: { font: { family: 'Inter', size: 12 }, padding: 8 }, grid: { display: false } }
+    }
+  }
+});
+
+// 11. Region chart
+new Chart(document.getElementById('regionChart'), {
+  type: 'bar',
+  data: {
+    labels: ['North India', 'South India', 'West & Central', 'East India'],
+    datasets: [{ data: [30, 29, 26, 15], backgroundColor: [BLUE, GREEN, GOLD, GRAY], borderRadius: 5 }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, ticks: { callback: v => v + '%', font }, grid: { color: gridColor } }, x: { ticks: { font }, grid: { display: false } } }
+  }
+});
+</script>
+</body>
+</html>
